@@ -26,7 +26,8 @@ jobs:
       - name: Update README.md badge
         run: |
           TOTAL=${{ steps.count.outputs.total }}
-          sed -i 's/\(Total_Desafios_Resolvidos-\)[0-9]\+/\\1'"$TOTAL"'/g' README.md
+          # Corrigindo o comando sed para garantir que o número seja substituído corretamente
+          sed -i "s/\(Total_Desafios_Resolvidos-[^ ]*\)/Total_Desafios_Resolvidos-$TOTAL/" README.md
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
