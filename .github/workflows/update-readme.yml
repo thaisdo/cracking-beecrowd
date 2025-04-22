@@ -7,6 +7,9 @@ on:
       - 'sql/**.sql'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   count-and-update:
     runs-on: ubuntu-latest
@@ -33,3 +36,4 @@ jobs:
         with:
           commit_message: "chore: update README challenge count"
           file_pattern: README.md
+          branch: main
