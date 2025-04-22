@@ -1,6 +1,6 @@
 # 🐝 cracking-beecrowd
 
-![challenges solved](https://img.shields.io/badge/Total_Desafios_Resolvidos-${TOTAL}-blueviolet)
+![challenges solved](https://img.shields.io/badge/Total_Desafios_Resolvidos-18)
 
 personal repository where I solve platform challenges on [Beecrowd](https://www.beecrowd.com.br/).
 
