@@ -3,6 +3,7 @@ name: Update README with Challenge Count
 on:
   push:
     paths:
+      - 'java/**.java'
       - 'python/**.py'
       - 'sql/**.sql'
   workflow_dispatch:
@@ -14,12 +15,13 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Count .py and .sql files
+      - name: Count .java and .py and .sql files
         id: count
         run: |
+          JAVA_COUNT=$(find java -name "*.java" | wc -l)
           PY_COUNT=$(find python -name "*.py" | wc -l)
           SQL_COUNT=$(find sql -name "*.sql" | wc -l)
-          TOTAL_COUNT=$((PY_COUNT + SQL_COUNT))
+          TOTAL_COUNT=$((JAVA_COUNT + PY_COUNT + SQL_COUNT))
           echo "Total challenges: $TOTAL_COUNT"
           echo "total=$TOTAL_COUNT" >> $GITHUB_OUTPUT
 
