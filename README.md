@@ -12,7 +12,11 @@ here you will find solutions in **Python** and **SQL**, organized by level and l
 
 ```bash
 .
+├── .github
+├── java/
+│   └── beginner/
 ├── python/
 │   └── beginner/
 ├── sql/
+├── .gitattributes
 └── README.md
